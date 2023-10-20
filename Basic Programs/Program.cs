@@ -2,19 +2,24 @@
 using Basic_Programs;
 
 
-EV ev = new();
-ev.vehnum = 444;
-ev.Brand = "XX";
-ev.model = "AA";
-ev.Disp();
-Console.WriteLine(ev.setTypeForVeh());
+//EV ev = new EV();
+//ev.vehnum = 34;
+//ev.Brand = "XX";
+//ev.model = "AA";
+//ev.Disp();
+//Console.WriteLine(ev.setTypeForVeh());
 
-PV pv = new();
-pv.vehnum = 555;
-pv.Brand = "XY";
-pv.model = "AB";
-pv.Disp();
-Console.WriteLine(pv.setTypeForVeh());
+//PV pv = new PV();
+//pv.vehnum = 555;
+//pv.Brand = "XY";
+//pv.model = "AB";
+//pv.Disp();
+//Console.WriteLine(pv.setTypeForVeh());
+EV electric =new EV();
+electric.vehnum = 1;
+electric.Brand = "AUDI";
+electric.Disp();
+electric.setTypeForVeh();
 
 
 /*

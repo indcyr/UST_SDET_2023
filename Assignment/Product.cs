@@ -29,5 +29,11 @@ namespace Assignment
         {
          return Price * Quantity;
         }
+        public void DisplayProduct()
+        {
+            Console.WriteLine("Product Name: " + productName);
+            Console.WriteLine("Price :" + price);
+            Console.WriteLine("Quantity: " + quantity);
+        }
     }
 }
