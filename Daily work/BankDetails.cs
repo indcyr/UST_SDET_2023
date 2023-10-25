@@ -47,9 +47,6 @@ namespace Daily_work
             Console.WriteLine("Welcome");
         }
 
-        partial void ExitMess();
-        
-
         public void GetAccDetails(int custid)
         {
             if(Custid==custid)
