@@ -1,18 +1,71 @@
 ﻿using Assignment;
+using System.ComponentModel.DataAnnotations;
 
-/*InsurancePolicy ip = new("Policy1", 123, 8999);
-ip.RenewPolicy(10999);
-InsurancePolicy ip2 = new("Policy2", 133, 10000);
-ip2.RenewPolicy();
+Patient pat = new(1, "", 33, "fever");
+
+try
+{
+    pat.AddPatient(pat);
+}
+catch(ArgumentException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+
+/*
+CallRecord cr1 = new CallRecord(123,9098909899,350);
+CallRecord cr2 = new CallRecord(124,98098909899, 700);
+CallRecord cr3 = new CallRecord(125, 7098909899, 1200);
+
+
+CallRecord.calRec.Add(1, cr1);
+CallRecord.calRec.Add(2, cr2);
+CallRecord.calRec.Add(3, cr3);
+
+CallRecord.SearchRec(98098909899);
+CallRecord.TotalCalls();
 */
 
-LifeInsurance l1 = new("Policy1", 123, 8999,60);
-Console.WriteLine("Policy Name : {0} \t Policy Id : {1} \t Age : {2} \n",l1.PolicyName,l1.PolicyId,l1.Age);
-Console.WriteLine("Updated Premium" + l1.CalculatePremium());
+/*
+Customer cust1 = new Customer(111, "AA", "9098909888", 10000);
+Customer cust2 = new Customer(112, "BB", "8098909888", 20000);
+Customer cust3 = new Customer(113, "CC", "7098909888", 15080);
 
-CarInsurance car1 = new CarInsurance("Policy 2",133,10000,"Petrol");
-Console.WriteLine("Policy Name : {0} \t Policy Id : {1} \t Fuel Type : {2} \n", car1.PolicyName, car1.PolicyId, car1.FuelType);
-Console.WriteLine("Updated Premium" + car1.CalculatePremium());
+Dictionary<int, Customer> customer = new Dictionary<int, Customer>();
+
+customer.Add(1, cust1);
+customer.Add(2, cust2);
+customer.Add(3, cust3);
+
+FindCustomer("6789054567");
+DisplayCustomerDetails();
+
+void FindCustomer(string phnNo)
+{
+    foreach (var i in customer.Values)
+    {
+        if(phnNo==i.PhoneNo)
+        {
+            Console.WriteLine("Name :" + i.Name);
+            Console.WriteLine("Balance :" + i.Balance);
+            break;
+        }
+
+        
+    }
+    
+
+}
+void DisplayCustomerDetails()
+{
+    foreach (var i in customer.Values)
+    {
+        Console.WriteLine("Cust Id : {0} \n Name: {1} \n Phone No: {2} \n Balance: {3}", i.CustId, i.Name, i.PhoneNo, i.Balance);
+    }
+}
+*/
+
 
 
 
