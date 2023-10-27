@@ -9,13 +9,16 @@ namespace Assignment
 {
     internal class Patient
     {
-        public int PatientId { get; set; }
+        public  int PatientId { get; set; }
         public string? Name { get; set; }
         public int Age { get; set; }
         public string? Diagnosis { get; set; }
 
-        List<Patient> pat = new List<Patient>();
+        List<Patient> patients = new List<Patient>();
 
+        
+
+        /*
         public Patient(int patientId, string? name, int age, string? diagnosis)
         {
             PatientId = patientId;
@@ -23,6 +26,7 @@ namespace Assignment
             Age = age;
             Diagnosis = diagnosis;
         }
+        */
 
         public void AddPatient(Patient patient) 
         {
@@ -36,12 +40,16 @@ namespace Assignment
             }
             else
             {
-                pat.Add(patient);
+                patients.Add(patient);
                 Console.WriteLine("Patient Added");
 
             }
 
         }
+       
+
+       
+        
 
 
 

@@ -1,16 +1,204 @@
 ﻿using Assignment;
+using Assignment.ExceptionHandling;
 using System.ComponentModel.DataAnnotations;
 
-Patient pat = new(1, "", 33, "fever");
+while (true)
+{
+    Console.WriteLine("Choose your option\n 1.Add MedicalRecord\n 2.View MedicalRecord");
+    int option = Convert.ToInt32(Console.ReadLine());
+    FileStream fileStream = new FileStream("C:\\Users\\Administrator\\Desktop\\File\\MedicalRecord.txt",
+        FileMode.Append, FileAccess.Write);
+    StreamWriter writer = new StreamWriter(fileStream);
+
+
+    switch (option)
+    {
+        case 1:
+            Console.WriteLine("Enter the Record Id");
+            int recordId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the patient Id");
+            int patientId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Description");
+            string? description = Console.ReadLine();
+            Console.WriteLine("Enter the date");
+            string? date = Console.ReadLine();
+
+
+            MedicalHistory medicalHistory = new MedicalHistory();
+            medicalHistory.RecordId = recordId;
+            medicalHistory.PatientId = patientId;
+            medicalHistory.Description = description;
+            medicalHistory.Date = date;
+
+
+            try
+            {
+                medicalHistory.MedRecordInfo(medicalHistory);
+            }
+            catch (ArgumentException ex) { Console.WriteLine(ex.Message); }
+
+            writer.WriteLine("Record id:{0}\t patient Id:{1}\t Description is:{2}\t Date:{3}",
+                recordId, patientId, description, date);
+            break;
+
+
+        case 2:
+
+            writer.Close();
+            FileStream fs = new FileStream("C:\\Users\\Administrator\\Desktop\\File\\MedicalRecord.txt",
+                FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            sr.BaseStream.Seek(0, SeekOrigin.Begin);
+            string? str = sr.ReadLine();
+            while (str != null)
+            {
+                Console.WriteLine(str);
+                str = sr.ReadLine();
+
+
+            }
+
+            sr.Close();
+            fs.Close();
+            break;
+
+    }
+    writer.Close();
+    Console.WriteLine("Do you want to continue\n1.yes \n2.no");
+    int opp = Convert.ToInt32(Console.ReadLine());
+    if (opp == 1)
+    {
+        continue;
+
+    }
+    else if (opp == 2)
+    {
+        Environment.Exit(0);
+    }
+    else
+    {
+        Console.WriteLine("invalid input");
+    }
+}
+
+
+
+/*
+ * Assignment 2
+while (true)
+{
+    Console.WriteLine("Choose your option\n 1.Add Patient\n 2.View patient");
+    int option = Convert.ToInt32(Console.ReadLine());
+
+    FileStream fileStream = new FileStream("C:\\Users\\Administrator\\Desktop\\File\\Patient.txt",
+            FileMode.Append, FileAccess.Write);
+    StreamWriter writer = new StreamWriter(fileStream);
+
+    switch (option)
+    {
+        case 1:
+            
+            Console.WriteLine("Enter the patientid");
+            int patientId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the patient name");
+            string? patientName = Console.ReadLine();
+            Console.WriteLine("enter the age");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the diagnosis");
+            string? diagnosis = Console.ReadLine();
+
+            Patient patient = new Patient();
+            patient.Name = patientName;
+            patient.PatientId = patientId;
+            patient.Age = age;
+            patient.Diagnosis = diagnosis;
+
+            try
+            {
+                patient.AddPatient(patient);
+            }
+            catch (ArgumentException ex) { Console.WriteLine(ex.Message); }
+
+            writer.WriteLine("patient id:{0}\t patient name:{1}\t age is:{2}\t Diagnosis:{3}",
+                patientId, patientName, age, diagnosis);
+            break;
+
+
+        case 2:
+
+            writer.Close();
+            FileStream fs = new FileStream("C:\\Users\\Administrator\\Desktop\\File\\Patient.txt",
+                FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            sr.BaseStream.Seek(0, SeekOrigin.Begin);
+            string? str = sr.ReadLine();
+            while (str != null)
+            {
+                Console.WriteLine(str);
+                str = sr.ReadLine();
+
+
+            }
+
+            sr.Close();
+            fs.Close();
+            break;
+
+    }
+        
+    writer.Close();
+    Console.WriteLine("Do you want to continue\n1.yes \n2.no");
+    int opp = Convert.ToInt32(Console.ReadLine());
+    if (opp == 1)
+    {
+        continue;
+
+    }
+    else if (opp == 2)
+    {
+        Environment.Exit(0);
+    }
+    else
+    {
+        Console.WriteLine("invalid input");
+    }
+}
+
+*/
+
+
+
+/*
+Assignment 1 
+
+MedicalRecord medicalrecord = new(123,2345, 333, " ", 36, "fever");
 
 try
 {
-    pat.AddPatient(pat);
+    medicalrecord.AddMedicalReport(medicalrecord);
 }
-catch(ArgumentException ex)
+catch(InvalidPatientDataException pd)
 {
-    Console.WriteLine(ex.Message);
+    Console.WriteLine(pd.Message);
 }
+catch (InvalidMedicalRecordException md)
+{
+    Console.WriteLine(md.Message);
+    
+}
+
+*/
+
+//Patient pat = new(1, "", 33, "fever");
+
+//try
+//{
+//    pat.AddPatient(pat);
+//}
+//catch(ArgumentException ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
 
 
 /*
@@ -65,6 +253,8 @@ void DisplayCustomerDetails()
     }
 }
 */
+
+
 
 
 
