@@ -1,20 +1,20 @@
 ﻿using Case_Study;
 
-Customers customer11 = new Customers();
-customer11.CustomerID = 1;
-customer11.CustomerName = "XX";
-customer11.CustomerEmail = "XX@ust";
-Customers.customers.Add(customer11);
-Customers customer12 = new Customers();
-customer12.CustomerID = 2;
-customer12.CustomerName = "AA";
-customer12.CustomerEmail = "AA@ust";
-Customers.customers.Add(customer12);
-Customers customer13 = new Customers();
-customer13.CustomerID = 3;
-customer13.CustomerName = "BB";
-customer13.CustomerEmail = "BB@ust";
-Customers.customers.Add(customer13);
+Customers cust1 = new Customers();
+cust1.CustomerID = 001;
+cust1.CustomerName = "XX";
+cust1.CustomerEmail = "XX@gmail.com";
+Customers.customers.Add(cust1);
+Customers cust2 = new Customers();
+cust2.CustomerID = 002;
+cust2.CustomerName = "AA";
+cust2.CustomerEmail = "AA@gmail.com";
+Customers.customers.Add(cust2);
+Customers cust3 = new Customers();
+cust3.CustomerID = 003;
+cust3.CustomerName = "BB";
+cust3.CustomerEmail = "BB@gmail.com";
+Customers.customers.Add(cust3);
 
 while (true)
 {
@@ -33,7 +33,7 @@ while (true)
         }
         while (true)
         {
-            Console.WriteLine("choose your option\n1.Add product to cart\n2.view all product\n3.place order\n4.Support\n5.view orders");
+            Console.WriteLine("choose your option\n1.Add product to cart\n2.view Cart\n3.place order\n4.Support\n5.view orders");
             int optionuser = Convert.ToInt32(Console.ReadLine());
 
             switch (optionuser)
@@ -128,7 +128,7 @@ while (true)
 
                     break;
                 case 4:
-                    Console.WriteLine("call this number for support 96456636727");
+                    Console.WriteLine("For support, dial 9876543210");
                     break;
                 case 5:
                     Customers customer2 = Customers.customers.Find(x => x.CustomerID == cusId);

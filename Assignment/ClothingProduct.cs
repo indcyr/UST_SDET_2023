@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment
 {
+    /*
     internal class ClothingProduct : Product
     {
         public ClothingProduct(string? size, string? productName, double price, int quantity):base(productName,price,quantity) 
@@ -20,4 +21,5 @@ namespace Assignment
             Console.WriteLine("Size : {0},", Size);
         }
     }
+    */
 }

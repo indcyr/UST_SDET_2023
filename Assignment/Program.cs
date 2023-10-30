@@ -2,7 +2,24 @@
 using Assignment.ExceptionHandling;
 using System.ComponentModel.DataAnnotations;
 
-while (true)
+/*
+var typ1 = "MI";
+var typ2 = 1010;
+var typ3 = "OnePlus";
+Product<string>.AddProduct(1, ref typ1, 100, 2);
+Product<int>.AddProduct(2, ref typ2, 50, 3);
+Product<string>.UpdateProduct(1, typ3);
+Product<string>.DeleteProduct(2);
+Product<string>.SearchProduct(1);
+*/
+
+var typ1 = "single";
+var typ2 = 2;
+RoomReservation<string>.BookRoom(123, ref typ1);
+RoomReservation<int>.BookRoom(101, ref typ2);
+RoomReservation<string>.CancelRoom(101);
+
+/*while (true)
 {
     Console.WriteLine("Choose your option\n 1.Add MedicalRecord\n 2.View MedicalRecord");
     int option = Convert.ToInt32(Console.ReadLine());

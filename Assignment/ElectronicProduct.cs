@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment
 {
+    /*
     internal class ElectronicProduct : Product
     {
 
@@ -21,5 +22,5 @@ namespace Assignment
             Console.WriteLine("Warranty Period: {0}", WarrantyPeriod);
         }
     }
-
+    */
 }
