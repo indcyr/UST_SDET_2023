@@ -1,6 +1,61 @@
 ﻿using Assignment;
 using Assignment.ExceptionHandling;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection;
+class Program
+{
+
+    public delegate void EventNotification(HotelEvent eve);
+    static int capacity = 1997;
+    public static void Main(string[] args)
+    {
+        while (true)
+        {
+            HotelEvent eve = new HotelEvent();
+            Console.WriteLine("Enter the event name");
+            string? eventName = Console.ReadLine();
+            Console.WriteLine("Enter the event date");
+            string? eventDate = Console.ReadLine();
+            Console.WriteLine("Enter the Location");
+            string? eventLocation = Console.ReadLine();
+            eve.EventName = eventName;
+            eve.EventDate = eventDate;
+            eve.Location = eventLocation;
+            eve.Capacity = capacity;
+            if (capacity < 2000)
+            {
+                EventNotification notification = HotelEvent.EventNotification;
+                notification(eve);
+            }
+            else
+            {
+
+                EventNotification notify = HotelEvent.EventCapacity;
+                notify(eve);
+                Environment.Exit(0);
+
+            }
+            Console.WriteLine("Do you want to continue\n1.yes\n2.no");
+            int option = Convert.ToInt32(Console.ReadLine());
+            if (option == 1)
+            {
+                continue;
+            }
+            else if (option == 2)
+            {
+                Environment.Exit(0);
+
+
+            }
+            else
+            {
+                Console.WriteLine("Invalid option");
+            }
+        }
+    }
+
+}
+
 
 /*
 var typ1 = "MI";
@@ -13,13 +68,15 @@ Product<string>.DeleteProduct(2);
 Product<string>.SearchProduct(1);
 */
 
-var typ1 = "single";
+/*var typ1 = "single";
 var typ2 = 2;
 RoomReservation<string>.BookRoom(123, ref typ1);
 RoomReservation<int>.BookRoom(101, ref typ2);
 RoomReservation<string>.CancelRoom(101);
+*/
 
-/*while (true)
+/*
+ while (true)
 {
     Console.WriteLine("Choose your option\n 1.Add MedicalRecord\n 2.View MedicalRecord");
     int option = Convert.ToInt32(Console.ReadLine());
@@ -182,8 +239,6 @@ while (true)
 }
 
 */
-
-
 
 /*
 Assignment 1 

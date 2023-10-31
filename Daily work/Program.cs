@@ -3,6 +3,23 @@ using Daily_work.ExceptionMessages;
 
 
 
+public delegate void Del1(string mess);
+public delegate void Del2(string mess);
+
+class Program
+{
+    private static Del1 MethodA;
+    public static void Main(string[] args) 
+    {
+        // Del1 dobj1 = DelEx.MethodA;
+        Del1 dobj1 = MethodA;
+        //dobj1("How r u?");
+
+    }
+}
+
+
+
 //GenEX<int> g1 = new GenEX<int> (1, 2);
 //Console.WriteLine (g1.Val1 + " " +g1.Val2);
 
@@ -22,6 +39,8 @@ using Daily_work.ExceptionMessages;
 
 //GenEX<int> ga = new GenEX<int>(new int[3] {1,2,3});
 //ga.Display();
+
+/*
 static void Swap<T>(ref T num1, ref T num2)
 {
     T temp;
@@ -39,7 +58,7 @@ Console.WriteLine("A = {0} B ={1}", n1, n2);
 Console.WriteLine("c = {0} d ={1}", c1, c2);
 
 
-
+*/
 
 
 //FileOperations fo = new FileOperations();
