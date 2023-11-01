@@ -8,15 +8,15 @@ namespace LINQ
 {
     internal class Student
     {
-        public Student(int id, string? name, string? dept)
+        public Student(int studentId, string? studentName, int age)
         {
-            Id = id;
-            Name = name;
-            Dept = dept;
+            StudentId = studentId;
+            StudentName = studentName;
+            Age = age;
         }
 
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Dept { get; set; }
+        public int StudentId { get; set; }
+        public string? StudentName { get; set; }
+        public int Age { get; set; }
     }
 }

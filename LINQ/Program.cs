@@ -1,4 +1,5 @@
-﻿using LINQ;
-LINQEx l=new LINQEx();
-//l.eg1();
-l.eg2();
+﻿linqExample linq = new linqExample();
+//linq.ExampleTwo();
+//linq.filteringofType();
+
+linq.SortOrderBy();

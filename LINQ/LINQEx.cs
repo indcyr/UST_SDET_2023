@@ -9,71 +9,115 @@ namespace LINQ
 {
     internal class LINQEx
     {
-        public void eg1()
+        public void ExampleOne()
         {
             List<string> courses = new List<string>();
             courses.Add("C Tutorial");
-            courses.Add("C++ Tutorial");
             courses.Add("Java Tutorial");
-            courses.Add("Web Tech");
+            courses.Add("C# Tutorial");
+            courses.Add("C++ Tutorial");
             courses.Add("DBMS");
-            courses.Add("UI Exp");
+            courses.Add("UI");
 
-            //  var result = from c in courses where c.Equals("DBMS") select c;
-            // var result = courses.Where(c => c.Equals("DBMS"));
-            var result = courses.Where(c => c.Contains("Tutorial"));
-            foreach (var c in result) {
-            Console.WriteLine(c);
+            //var result = from c in courses
+            //             where c.Equals("DBMS")   //query Syntax
+            //             select c;
+
+
+            // var result = courses.Where(c =>c.Contains("Tutorial"));  //method syntax
+
+            var result = courses.Where(c => c.EndsWith("l"));
+            foreach (var r in result)
+            {
+                Console.WriteLine(r);
+
             }
+
+
         }
-        public void eg2()
+
+        public void ExampleTwo()
         {
             List<Student> students = new List<Student>();
-            students.Add(new Student(1, "Ravi", "CSE"));
-            students.Add(new Student(2, "Anu", "MCE"));
-            students.Add(new Student(3, "Manu", "EEE"));
-            students.Add(new Student(4, "Lilly", "ECE"));
-            students.Add(new Student(5, "Unni", "AIE"));
+            students.Add(new Student(1, "Adhi", 24));
+            students.Add(new Student(2, "Hari", 26));
+            students.Add(new Student(3, "Abhi", 25));
+            students.Add(new Student(4, "Afsal", 23));
 
-            Student stud = (Student)students.FirstOrDefault(s => s.Id == 8);
-            if(stud != null) { 
-            Console.WriteLine("Student:"+ stud.Id + "" + stud.Name + "" + stud.Dept);
-            }
-            else
+            var stud = students.Where(s => s.StudentId == 1);
+            foreach (var item in stud)
             {
-                Console.WriteLine("Not Found");
+                Console.WriteLine(item.StudentId + " " + item.StudentName + " " + item.Age);
             }
-            List<Student> stud1 =(List<Student>)students.FindAll(s=>s.Name == "Lilly" || s.Name == "Anu");
-            //var stud = students.Where(s=> s.Id == 4);
-            foreach (var s in stud1)
+
+
+
+            Student? stud2 = students.FirstOrDefault(s => s.StudentId == 2);
+            if (stud2 != null)
             {
-                Console.WriteLine("Student :" +  s.Id + " " + s.Name + " " + s.Dept);
+                Console.WriteLine(stud2.StudentId + " " + stud2.StudentName + " " + stud2.Age);
+
             }
-            var result = students.OrderBy(s => s.Id).ThenBy(s => s.Name);
-            foreach(var s in result)
+
+            Console.WriteLine("Greater than 3");
+
+            List<Student> stud1 = students.FindAll(s => s.StudentId >= 3);
+            foreach (Student item in stud1)
             {
-                Console.WriteLine(s.Name + " " + s.Id);
+                Console.WriteLine(item.StudentId + " " + item.StudentName + " " + item.Age);
             }
-            var result1  = students.ToLookup(s => s.Id);
+
+        }
+
+        public void filteringofType()
+        {
+            ArrayList elements = new ArrayList();
+            elements.Add(1);
+            elements.Add(2);
+            elements.Add("Adhi");
+
+
+            var num = elements.OfType<int>();
+            var strings = elements.OfType<string>();
+            foreach (string str in strings)
+            {
+                Console.WriteLine("String :" + str);
+            }
+            foreach (int item in num)
+            {
+                Console.WriteLine("Integer: " + item);
+            }
+
+        }
+
+
+
+        public void SortOrderBy()
+        {
+            List<Student> students = new List<Student>();
+            students.Add(new Student(1, "Adhi", 24));
+            students.Add(new Student(2, "Amal", 26));
+            students.Add(new Student(3, "Abhi", 25));
+            students.Add(new Student(4, "Afsal", 23));
+
+            //var result = students.OrderBy(s => s.StudentName).ThenBy(s=> s.Age);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.StudentId+  " "+item.StudentName + " " + item.Age);
+            //}
+
+            var result1 = students.ToLookup(s => s.StudentName);
             foreach (var s in result1)
             {
                 Console.WriteLine(s.Key);
-                foreach(var s2 in s)
-                    Console.WriteLine(s2.Name+ "" +s2.Dept);
+
+                foreach (var x in s)
+                {
+
+                    Console.WriteLine(x.StudentId + " " + x.Age);
+                }
             }
-        }
-        public void SortingOrderBy()
-        {
-            ArrayList elements = new()
-            {
-                1,2,3,"Four",5,"Six"
-            };
-            var numbers = elements.OfType<int>();
-            var strings = elements.OfType<string>();
-            foreach (string str in strings)
-                Console.WriteLine("String: " + str);
-            foreach (int num in numbers)
-                Console.WriteLine("Integer: " + num);
+
         }
     }
 }
