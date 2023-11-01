@@ -2,6 +2,13 @@
 using Assignment.ExceptionHandling;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+
+
+//TourismDestination.DestinationDetails();
+
+TouristDestination.DestinationDetails();
+
+/*
 class Program
 {
 
@@ -55,7 +62,7 @@ class Program
     }
 
 }
-
+*/
 
 /*
 var typ1 = "MI";
