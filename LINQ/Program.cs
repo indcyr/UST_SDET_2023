@@ -1,4 +1,4 @@
-﻿linqExample linq = new linqExample();
+﻿linqEx linq = new linqEx();
 //linq.ExampleTwo();
 //linq.filteringofType();
 
