@@ -3,10 +3,51 @@ using Assignment.ExceptionHandling;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
+//02-11-2023
+//Assignment 2
+TourPackage package = new TourPackage(1, "AA", "02-01-2024", 1000);
+TourPackage package1 = new TourPackage(2, "BB", "12-12-2024", 2000);
+TourPackage package2 = new TourPackage(3, "CC", "12-09-2024", 3000);
+
+TourPackage.tourPackages.Add(package1);
+TourPackage.tourPackages.Add(package2);
+TourPackage.tourPackages.Add(package);
+
+
+Thread thread = new Thread(TourPackage.HotelReservation);
+
+Thread thread1 = new Thread(TourPackage.HotelReservation);
+
+thread.Start();
+thread.Join();
+thread1.Start();
+
+//Assignment1
+
+//Hotel hotel1 = new Hotel("AA", "India", 3, 5, "XX");
+//Hotel hotel2 = new Hotel("BB", "Dubai", 2 ,10, "YY");
+
+
+//Console.WriteLine("Available rooms at Hotel{0} is {1}", hotel1.Hotelname, hotel1.AvailableRooms);
+//Console.WriteLine("Available rooms at Hotel{0} is {1}", hotel2.Hotelname, hotel2.AvailableRooms);
+//await HotelBooking(hotel1, 3);
+//await HotelBooking(hotel2, 4);
+
+
+//Console.WriteLine("Available rooms at Hotel{0} is {1}", hotel1.Hotelname, hotel1.AvailableRooms);
+//Console.WriteLine("Available rooms at Hotel{0} is {1}", hotel2.Hotelname, hotel2.AvailableRooms);
+
+
+//static async Task HotelBooking(Hotel hotel, int reqrooms)
+//{
+//    await hotel.HotelBooK(reqrooms);
+//}
+
+
 
 //TourismDestination.DestinationDetails();
 
-TouristDestination.DestinationDetails();
+//TouristDestination.DestinationDetails();
 
 /*
 class Program
