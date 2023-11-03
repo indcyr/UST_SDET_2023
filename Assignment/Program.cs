@@ -3,24 +3,80 @@ using Assignment.ExceptionHandling;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
+
+
+//03-11-2023
+
+//Assignment 2
+
+FamilyMember grandparent = new FamilyMember("Grandparent", 60);
+FamilyTree familyTree = new FamilyTree(grandparent);
+
+FamilyMember parent1 = new FamilyMember("Parent 1", 65);
+FamilyMember parent2 = new FamilyMember("Parent 2", 50);
+FamilyMember child1 = new FamilyMember("Child 1", 28);
+FamilyMember child2 = new FamilyMember("Child 2", 26);
+FamilyMember grandchild1 = new FamilyMember("Grandchild 1", 11);
+
+
+grandparent.AddChild(parent1);
+grandparent.AddChild(parent2);
+parent1.AddChild(child1);
+parent1.AddChild(child2);
+child1.AddChild(grandchild1);
+
+Console.WriteLine("Family Tree:");
+familyTree.DisplayFamilyTree();
+
+//Assignment 1
+//TaskItem ts = new TaskItem(1, "Birthday", false);
+//TaskItem ts1 = new TaskItem(2, "Game", true);
+//TaskItem ts2 = new TaskItem(3, "gym", true);
+//TaskItem ts3 = new TaskItem(4, "work", false);
+
+//TaskItem.TaskItems.Add(ts);
+//TaskItem.TaskItems.Add(ts1);
+//TaskItem.TaskItems.Add(ts2);
+//TaskItem.TaskItems.Add(ts3);
+
+//TaskItem.Display();
+//Console.WriteLine(" Enter the id to change");
+//int id = Convert.ToInt32(Console.ReadLine());
+//var status = TaskItem.TaskItems.Find(x => x.TaskId == id);
+//if (status != null)
+//{
+//    status.IsCompleted = true;
+//    Console.WriteLine("Status has been changed");
+//}
+//else
+//    Console.WriteLine("id not found");
+//Console.WriteLine("Enter the id to remove Task");
+//int remove = Convert.ToInt32(Console.ReadLine());
+//TaskItem.TaskItems.RemoveAll(x => x.TaskId == remove);
+//Console.WriteLine("Task removed succeessfully");
+
+//Console.WriteLine("Total Tasks Are");
+//TaskItem.FilteringTask();
+
+
 //02-11-2023
 //Assignment 2
-TourPackage package = new TourPackage(1, "AA", "02-01-2024", 1000);
-TourPackage package1 = new TourPackage(2, "BB", "12-12-2024", 2000);
-TourPackage package2 = new TourPackage(3, "CC", "12-09-2024", 3000);
+//TourPackage package = new TourPackage(1, "AA", "02-01-2024", 1000);
+//TourPackage package1 = new TourPackage(2, "BB", "12-12-2024", 2000);
+//TourPackage package2 = new TourPackage(3, "CC", "12-09-2024", 3000);
 
-TourPackage.tourPackages.Add(package1);
-TourPackage.tourPackages.Add(package2);
-TourPackage.tourPackages.Add(package);
+//TourPackage.tourPackages.Add(package1);
+//TourPackage.tourPackages.Add(package2);
+//TourPackage.tourPackages.Add(package);
 
 
-Thread thread = new Thread(TourPackage.HotelReservation);
+//Thread thread = new Thread(TourPackage.HotelReservation);
 
-Thread thread1 = new Thread(TourPackage.HotelReservation);
+//Thread thread1 = new Thread(TourPackage.HotelReservation);
 
-thread.Start();
-thread.Join();
-thread1.Start();
+//thread.Start();
+//thread.Join();
+//thread1.Start();
 
 //Assignment1
 

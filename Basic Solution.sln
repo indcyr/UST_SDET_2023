@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Case Study", "Case Study\Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQ", "LINQ\LINQ.csproj", "{2B95AB1A-0761-4874-B695-21367CB25074}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsEx", "ThreadsEx\ThreadsEx.csproj", "{3460F36C-C58A-40FE-949A-1CE17EA6F815}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadsEx", "ThreadsEx\ThreadsEx.csproj", "{3460F36C-C58A-40FE-949A-1CE17EA6F815}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{3E6AD8F4-5242-4114-8370-9BEADB95EFF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{3460F36C-C58A-40FE-949A-1CE17EA6F815}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3460F36C-C58A-40FE-949A-1CE17EA6F815}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3460F36C-C58A-40FE-949A-1CE17EA6F815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E6AD8F4-5242-4114-8370-9BEADB95EFF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E6AD8F4-5242-4114-8370-9BEADB95EFF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E6AD8F4-5242-4114-8370-9BEADB95EFF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E6AD8F4-5242-4114-8370-9BEADB95EFF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
